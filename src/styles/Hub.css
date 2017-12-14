@@ -1,0 +1,107 @@
+.hub-header {
+    background-color: #f3f3f3;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.hub-header__key {
+    display: inline-flex;
+    flex-shrink: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 32px;
+    justify-content: center;
+    position: relative;
+    text-transform: uppercase;
+    width: 50px;
+}
+
+.hub-header__key--active::after {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #0094D9;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+}
+
+.hub-player:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.hub-header__key:first-child {
+    width: 300px;
+}
+
+.hub-header__key--active {
+    color: #0094D9;
+}
+
+.hub-player {
+    border-bottom: solid 1px #eaeaea;
+    display: flex;
+    height: 60px;
+    overflow: hidden;
+}
+
+.hub-player__card {
+    align-items: center;
+    flex-shrink: 0;
+    display: inline-flex;
+    position: relative;
+    width: 300px;
+}
+
+.hub-player__card-name {
+    color: #a3a3a3;
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.hub-player__card-name--last {
+    color: #161616;
+    font-size: 16px;
+}
+
+.hub-player__card-team-logo {
+    position: absolute;
+    width: 80px;
+}
+
+.hub-player__card-portrait {
+    margin: 0 20px 0 8px;
+    position: relative;
+}
+
+.hub-player__card-portrait > label {
+    font-family: 'Open Sans Condensed', sans-serif;
+    bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    left: 0;
+    position: absolute;
+}
+
+.hub-player__rating  {
+    align-items: center;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    width: 50px;
+}
+
+.hub-player__rating--current {
+    color: #0094D9;
+}

@@ -1,0 +1,59 @@
+.mainLogo {
+    fill: #fff;
+    width: 32px;
+}
+.maddenLogo {
+    fill: #fff;
+    height: 24px;
+    margin-left: 8px;
+}
+
+.social-bar {
+    align-items: center;
+    background-color: rgba(0,0,0,.6);
+    display: flex;
+    height: 50px;
+    left: 0;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.social-bar__icons {
+    align-items: center;
+    display: inline-flex;
+}
+
+.social-bar__icon {
+    align-items: center;
+    border: solid 2px #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    height: 28px;
+    justify-content: center;
+    margin-left: 12px;
+    width: 28px;
+}
+
+.social-bar__icon > svg {
+    display: block;
+    fill: #fff;
+    transition: fill 200ms;
+    width: 16px;
+}
+
+.social-bar__icons--account {
+    margin-left: auto;
+}
+
+.social-bar__icon:first-child {
+    margin-left: 0;
+}
+
+.social-bar__icon:hover > svg {
+    fill: #0094d9;
+}

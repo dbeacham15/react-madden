@@ -1,0 +1,43 @@
+.top-players {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    padding: 32px 8vw;
+}
+
+.top-players__stream,
+.top-players__header {
+    display: flex;
+}
+
+.top-players__header {
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.top-players__stream {
+    overflow: hidden;
+}
+
+.top-players__stream > .card {
+    flex-shrink: 0;
+    margin-right: 16px;
+}
+
+.top-players__filter {
+    margin-left: auto;
+}
+
+.top-players__filter-selected {
+    align-items: center;
+    display: inline-flex;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.top-players__filter-selected > svg {
+    display: block;
+    margin-left: 4px;
+    width: 24px;
+}

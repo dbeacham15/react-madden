@@ -1,0 +1,40 @@
+header {
+    background-image: url(//media.contentapi.ea.com/content/dam/ea/easports/madden/home/hero-images/2017/oct/17/potw/weekly-plays_tout_medium-lg-2x.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    justify-content: center;
+    padding: 25px 8vw;
+    position: relative;
+}
+
+.header__content {
+    color: #eaeaea;
+    text-transform: uppercase;
+}
+
+.header__eyebrow {
+    display: block;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-bottom: 8px;
+}
+
+.navigation {
+    align-items: center;
+    bottom: 25px;
+    display: flex;
+    position: absolute;
+}
+
+.navigation__link {
+    color: #eaeaea;
+    font-size: 12px;
+    margin-right: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.navigation__link--active {
+    color: red;
+}

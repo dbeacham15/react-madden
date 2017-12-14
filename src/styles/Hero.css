@@ -1,0 +1,38 @@
+.hero {
+    height: 75vh;
+    position: relative;
+    width: 100%;
+}
+
+.hero__content,
+.hero__bg {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.hero__bg-img {
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+.hero__content {
+    color: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.hero__content > label,
+.hero__content h1 {
+    margin: 0;
+    text-transform: uppercase;
+}

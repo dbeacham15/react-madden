@@ -1,0 +1,107 @@
+.card {
+    border: solid 1px #eaeaea;
+    height: 275px;
+    padding: 16px;
+    position: relative;
+    width: 350px;
+}
+
+.card-content__back,
+.card-content__front {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.card-content  {
+    height: calc(100% - 50px);
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.card-name {
+    align-items: center;
+    background-color: #20459E;
+    bottom: 0;
+    display: flex;
+    height: 50px;
+    left: 0;
+    padding: 0 16px;
+    position: absolute;
+    width: 100%;
+}
+
+.card-name__text {
+    color: #eaeaea;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.card-name__text > span {
+    color: #fff;
+    font-size: 20px;
+}
+
+.card-content__profile-asset {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 225px;
+    z-index: 3;
+}
+
+.card-content__team-logo {
+    left: -100px;
+    opacity: .85;
+    position: absolute;
+    top: -100px;
+    transform: rotate(10deg);
+    width: 375px;
+    z-index: 2;
+}
+
+.card-name__team {
+    color: rgba(244,244,244,.2);
+    font-size: 38px;
+    position: absolute;
+    right: 8px;
+    text-transform: uppercase;
+}
+
+.card-content__rating {
+    align-items: center;
+    display: inline-flex;
+    height: 50px;
+    justify-content: center;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    width: 50px;
+}
+
+.card-content__rating > h5 {
+    color: #fff;
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 28px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-content__rating::before {
+    background-color: #0094D9;
+    content: '';
+    height: 125px;
+    position: absolute;
+    right: -65px;
+    transform: rotate(45deg);
+    top: -60px;
+    width: 130px;
+    
+}
