@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getPlayers, updateSortOrder } from '../store/actions/hub';
+import * as hubActions from '../store/actions/hub';
 import HubPlayer from './HubPlayer';
 import attributes from '../maps/attributes';
 import '../styles/Hub.css';
@@ -63,7 +63,7 @@ class Hub extends Component {
             return;
         }
 
-        //Change the Sort Key
+        this.props.updateSortKey(key);
     }
 
     render() {
@@ -78,7 +78,7 @@ class Hub extends Component {
                             let clsName = 'hub-header__key'
 
                             if (currentSortKey === key) {
-                                clsName = `${clsName} hub-header__key--active hub-header-key--${currentSortOrder}`;
+                                clsName = `${clsName} hub-header__key--active hub-header__key--${currentSortOrder}`;
                             }
 
                             return (
@@ -108,7 +108,7 @@ const mapStateToProps = state => {
     };
 };
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators( { getPlayers, updateSortOrder }, dispatch);
+    return bindActionCreators( { ...hubActions }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Hub);

@@ -40,9 +40,18 @@ export default function hub(state = initialState, action) {
             return {
                 ...state,
                 players: action.payload
-        }
+            }
+        case actionTypes.UPDATE_SORT_ORDER :
+            return {
+                ...state,
+                currentSortOrder: action.payload
+            }
+        case actionTypes.UPDATE_SORT_KEY :
+            return {
+                ...state,
+                currentSortKey: action.payload
+            }
     default :
-        return state
-
+        return state;
     }
 }

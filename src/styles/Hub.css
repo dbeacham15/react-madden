@@ -33,6 +33,11 @@
     width: 0;
 }
 
+.hub-header__key--asc::after {
+    border-bottom: solid 6px #0094d9;
+    border-top: none;
+}
+
 .hub-player:nth-child(even) {
     background-color: #f3f3f3;
 }

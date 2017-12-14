@@ -12,7 +12,7 @@ const _savePlayers = ( res ) => {
  * Retrieve All the Players for Hub
  */
 export const getPlayers = (attr = 'ovr_rating', limit = 25, offset = 0, sort = 'DESC') => {
-    return dispatch => {
+    return dispatch => { 
         axios.get(' https://www.easports.com/madden-nfl/ratings/service/data', {
             params: {
                 'entityType': 'madden18_player',
@@ -21,7 +21,7 @@ export const getPlayers = (attr = 'ovr_rating', limit = 25, offset = 0, sort = '
                 limit
             }
         })
-        .then((response) => {
+        .then((response) => { 
             if (response.status === 200) {
                 dispatch(_savePlayers(response.data.docs));
             }
@@ -44,6 +44,21 @@ export const updateSortOrder = (current) => {
         const newVal = (current === 'desc') ? 'asc' : 'desc';
 
         dispatch(_updateSortOrder(newVal));
-        getPlayers();
+        //GetPlayers With New Sort Order
     };
+}
+
+const _updateSortKey = key => {
+    return {
+        type: actionTypes.UPDATE_SORT_KEY,
+        payload: key
+    };
+}
+
+export const updateSortKey = (key) => {
+    return (dispatch, getState) => {
+        const ratingKey = `${attrs[key].ratingKey}_rating`;
+        dispatch(getPlayers(ratingKey));
+        dispatch(_updateSortKey(key));
+    }
 }
