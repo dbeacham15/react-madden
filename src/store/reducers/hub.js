@@ -3,6 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     currentSortKey: 'ovr',
     currentSortOrder: 'desc',
+    loading: true,
     attrOrder: [
         'ovr',
         'awr',
@@ -39,17 +40,25 @@ export default function hub(state = initialState, action) {
         case actionTypes.GET_PLAYERS :
             return {
                 ...state,
-                players: action.payload
+                players: action.payload,
+                loading: false
             }
         case actionTypes.UPDATE_SORT_ORDER :
             return {
                 ...state,
-                currentSortOrder: action.payload
+                currentSortOrder: action.payload,
+                loading: true
             }
         case actionTypes.UPDATE_SORT_KEY :
             return {
                 ...state,
-                currentSortKey: action.payload
+                currentSortKey: action.payload,
+                loading: true
+            }
+        case actionTypes.UPDATE_HUB_LOADING :
+            return {
+                ...state,
+                loading: action.payload
             }
     default :
         return state;

@@ -1,3 +1,7 @@
+.hub--loading .hub-players {
+    opacity: .25;
+} 
+
 .hub-header {
     background-color: #f3f3f3;
     display: flex;
@@ -8,6 +12,7 @@
 }
 
 .hub-header__key {
+    cursor: pointer;
     display: inline-flex;
     flex-shrink: 0;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -36,6 +41,11 @@
 .hub-header__key--asc::after {
     border-bottom: solid 6px #0094d9;
     border-top: none;
+}
+
+.hub--loading .hub-header__key {
+    cursor: initial;
+    pointer-events: none;
 }
 
 .hub-player:nth-child(even) {
@@ -109,4 +119,10 @@
 
 .hub-player__rating--current {
     color: #0094D9;
+}
+
+.hub-filtering {
+    display: flex;
+    padding: 16px 0;
+    justify-content: flex-end;
 }

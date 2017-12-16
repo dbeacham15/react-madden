@@ -21,7 +21,7 @@ export default class HubPlayer extends Component {
     render() {
         const teamId = parseInt(this.props.teamId, 10) - 1;
         return (
-            <div className="hub-player">
+            <div className="hub-player" onClick={ this.props.handler } data-id={ this.props.playerId }>
                 <div className="hub-player__card">
                     <img 
                         className="hub-player__card-team-logo"

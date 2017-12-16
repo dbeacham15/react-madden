@@ -11,12 +11,19 @@ const _savePlayers = ( res ) => {
 /**
  * Retrieve All the Players for Hub
  */
-export const getPlayers = (attr = 'ovr_rating', limit = 25, offset = 0, sort = 'DESC') => {
+export const getPlayers = (
+    entityType = 'madden18_player', 
+    filter = 'iteration:15',
+    attr = 'ovr_rating', 
+    limit = 25, 
+    offset = 0, 
+    sort = 'DESC'
+) => {
     return dispatch => { 
         axios.get(' https://www.easports.com/madden-nfl/ratings/service/data', {
             params: {
-                'entityType': 'madden18_player',
-                'filter': 'iteration:15',
+                'entityType': entityType,
+                'filter': filter,
                 'sort': `${attr}:${sort}`,
                 limit
             }
@@ -55,10 +62,37 @@ const _updateSortKey = key => {
     };
 }
 
-export const updateSortKey = (key) => {
+/**
+ * Action Creator for Updating Sort Key
+ * 
+ * @param {*} key 
+ */
+export const updateSortKey = key => {
     return (dispatch, getState) => {
         const ratingKey = `${attrs[key].ratingKey}_rating`;
-        dispatch(getPlayers(ratingKey));
+        dispatch(getPlayers(undefined, undefined, ratingKey));
         dispatch(_updateSortKey(key));
     }
+}
+
+/**
+ *  Action Creator for Searching Player Hub
+ * 
+ * @param {*} searchValue 
+ */
+export const searchPlayers = searchValue => {
+    return dispatch => {
+        dispatch(_triggerLoading());
+        const filter = `iteration:15 AND ((firstName: ${searchValue}* OR lastName: ${searchValue}*))`;
+        
+        dispatch(getPlayers(undefined, filter));
+        // Run Search Commands
+    }
+}
+
+const _triggerLoading = () => {
+    return {
+        type: actionTypes.UPDATE_HUB_LOADING,
+        payload: true
+    };
 }

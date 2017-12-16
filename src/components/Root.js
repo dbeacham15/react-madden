@@ -6,6 +6,7 @@ import App from '../App';
 import Compare from '../containers/Compare';
 import Hub from '../containers/Hub';
 import Home from '../containers/HomePage';
+import PlayerPage from '../containers/PlayerPage';
 
 const Root = ({ store }) => (
     <Provider store={ store }>
@@ -15,6 +16,7 @@ const Root = ({ store }) => (
                     <Route exact path="/" component={ Home } />
                     <Route path="/hub" component={ Hub } />
                     <Route path="/compare" component={ Compare } /> 
+                    <Route path="/player/:id" component={ PlayerPage } />
                 </Switch>
             </App>
         </Router>

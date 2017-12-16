@@ -5,12 +5,21 @@ import * as hubActions from '../store/actions/hub';
 import HubPlayer from './HubPlayer';
 import attributes from '../maps/attributes';
 import '../styles/Hub.css';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+
+import SearchInput from './SearchInput';
 
 class Hub extends Component {
+    static propTypes = {
+        history: PropTypes.object.isRequired
+      };
+
     constructor() {
         super();
 
         this.updateSort = this._updateSort.bind(this);
+        this.routeToPlayer = this._routeToPlayer.bind(this);
     }
 
     componentWillMount() {
@@ -32,6 +41,10 @@ class Hub extends Component {
         return ratings;
     }
 
+    _routeToPlayer(evt) {
+        console.log(evt.currentTarget.dataset.id);
+    }
+
     renderRows() {
         const { players, currentSortKey, currentSortOrder } = this.props.hub;
 
@@ -42,6 +55,8 @@ class Hub extends Component {
                 return (
                     <HubPlayer 
                         key={ player.id }
+                        playerId = { player.id }
+                        handler={() => { this.props.history.push(`/player/${player.id}`) }}
                         ratings={ ratings }
                         currentSortKey={ currentSortKey }
                         firstName={ player.firstName } 
@@ -68,9 +83,17 @@ class Hub extends Component {
 
     render() {
         const { attrOrder, currentSortKey, currentSortOrder } = this.props.hub;
+        let clsName = 'hub rail';
+
+        if (this.props.hub.loading) {
+            clsName = `${clsName} hub--loading`;
+        }
 
         return  (
-            <section className="hub rail">
+            <section className={ clsName }>
+                <div className="hub-filtering">
+                    <SearchInput />
+                </div>
                 <ul className="hub-header">
                     <li className="hub-header__key">Player</li>
                     { 
@@ -111,4 +134,4 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators( { ...hubActions }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hub);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Hub));
