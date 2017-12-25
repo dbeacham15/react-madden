@@ -7,7 +7,7 @@ import Compare from '../containers/Compare';
 
 export default () => {
     return (
-        <header>
+        <header className="header">
             <div className="header__content">
                 <label className="header__eyebrow">Madden Nfl 18</label>
                 <h1>Ratings Hub</h1>

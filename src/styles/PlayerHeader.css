@@ -1,0 +1,49 @@
+.player-header {
+    display: flex;
+    height: 275px;
+    overflow: hidden;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    position: relative;
+}
+
+.player-header__content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: auto;
+    padding-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.player-header__assets {
+    position: relative;
+    width: 350px;
+}
+
+.player-header__portrait,
+.player-header__logo {
+    position: absolute;
+}
+
+.player-header__portrait {
+    bottom: 0;
+    width: 100%;
+}
+
+.player-header__logo {
+    left: 20px;
+    top: -100px;
+}
+
+.player-header__name {
+    font-size: 32px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+.player-header__name > span {
+    color: #eaeaea;
+    font-size: 42px;
+}

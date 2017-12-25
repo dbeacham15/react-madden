@@ -1,0 +1,112 @@
+.filter-modal {
+    background-color: rgba(244,244,244,.9);
+    font-family: 'Open Sans Condensed', sans-serif;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    text-transform: uppercase;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.filter-modal__window {
+    background-color: #fff;
+    border: solid 1px #979797;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1024px;
+}
+
+.filter-modal__header {
+    align-items: center;
+    background-color: #0094D9;
+    display: flex;
+    font-weight: bold;
+    height: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-transform: uppercase;
+}
+
+.filter-modal__content {
+    display: flex;
+}
+
+.filter-modal__categories {
+    background-color: #eaeaea;
+    border-right: solid 1px #979797;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 74px;
+    width: 160px;
+}
+
+.filter-modal__categories-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-modal__categories-items > li {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 45px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.filter-modal__category--active::after {
+    background-color: #161616;
+    content: '';
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+.filter-modal__options {
+    width: 864px;
+}
+
+.filter-modal__close {
+    cursor: pointer;
+    margin-left: auto;
+    width: 24px;
+}
+
+.filter-modal__actions {
+    border-top: solid 1px #979797;
+    display: flex;
+    padding: 24px 16px;
+}
+
+.filter-modal__ctas {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.filter-modal__ctas > a {
+    margin-left: 16px;
+}
+
+.cta {
+    align-items: center;
+    border: solid 2px #000;
+    display: inline-flex;
+    line-height: 60px;
+    padding: 0 30px;
+}
+
+.cta--primary {
+    background-color: #0094D9;
+    border: none;
+}
