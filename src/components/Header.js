@@ -13,19 +13,22 @@ export default () => {
                 <h1>Ratings Hub</h1>
             </div>
             <nav className="navigation">
-                <Link to="/" 
+                <Link 
+                    to="/" 
                     className="navigation__link" 
-                    component={ App }>
+                >
                     Home
                 </Link>
-                <Link to="/hub" 
+                <Link 
+                    to="/hub" 
                     className="navigation__link" 
-                    component={ Hub }>
+                >
                     Database
                 </Link>
-                <Link to="/compare"
-                      className="navigation__link" 
-                      component={ Compare }>
+                <Link 
+                    to="/compare"
+                    className="navigation__link" 
+                >
                     Compare Players
                 </Link>
             </nav>

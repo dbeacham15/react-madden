@@ -9,10 +9,18 @@ class FilterModal extends Component {
         super();
 
         this.state = {
-            activeFilter: 'teams',
+            currentOptions: [],
+            activeCategory: 'teams',
             afcTeams: [],
             nfcTeams: []
         };
+    }
+
+    /**
+     * Setup State Objects we can before Component
+     */
+    componentWillMount() {
+        this._splitTeamConferences();
     }
 
     /**
@@ -51,7 +59,11 @@ class FilterModal extends Component {
     }
 
     _renderTeamOption() {
-        
+        if (this.state.currentOptions.length) {
+            this.state.currentOptions.map(option => {
+
+            });
+        } 
     }
 
     render() {
@@ -70,7 +82,7 @@ class FilterModal extends Component {
                         <div className="filter-modal__categories">
                             <ul className="filter-modal__categories-items">
                                 <li 
-                                    className={ this._getClassName(this.state.activeFilter, 'teams') } 
+                                    className={ this._getClassName(this.state.activeCategory, 'teams') } 
                                     data-filter="teams" 
                                     onClick={this._changeFilterCategory.bind(this) }>Teams</li>
                                 <li 
