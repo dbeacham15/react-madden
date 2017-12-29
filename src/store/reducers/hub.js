@@ -1,6 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
+    activeFilter: false,
     currentSortKey: 'ovr',
     currentSortOrder: 'desc',
     loading: true,
@@ -37,6 +38,11 @@ const initialState = {
 
 export default function hub(state = initialState, action) {
     switch(action.type) {
+        case actionTypes.DISPLAY_FILTER :
+            return {
+                ...state,
+                activeFilter: action.payload
+            }
         case actionTypes.GET_PLAYERS :
             return {
                 ...state,

@@ -71,7 +71,7 @@ class Hub extends Component {
     }
 
     renderRows() {
-        const { players, currentSortKey, currentSortOrder } = this.props.hub;
+        const { players, currentSortKey } = this.props.hub;
 
         if (players) {
             return players.map(player => {
@@ -142,7 +142,7 @@ class Hub extends Component {
         return this.props.hub.attrOrder.map(attr => {
             const ratingK = `${attributes[attr].ratingKey}_rating`;
             const diffKey = `${attributes[attr].ratingKey}_diff`;
-            const diff = parseInt(player[diff], 10);
+            const diff = parseInt(player[diffKey], 10);
             let clsName = 'hub-table__attributes-list-item';
 
             if (diff > 0) {
@@ -201,8 +201,19 @@ class Hub extends Component {
         this._setCurrent(current);     
     }
 
+    _handleFilterClick(evt) {
+        this.props.displayFilter(true);
+    }
+
+    _renderFilterModal() {
+        if (this.props.hub.activeFilter) {
+            return (
+                <FilterModal />
+            )
+        }
+    }
+
     render() {
-        const { attrOrder, currentSortKey, currentSortOrder } = this.props.hub;
         let clsName = 'hub rail';
 
         if (this.props.hub.loading) {
@@ -212,7 +223,11 @@ class Hub extends Component {
         return  (
             <section className={ clsName }>
                 <div className="hub-filtering">
-                    <div className="hub-filter" title="filter">
+                    <div 
+                        className="hub-filter"
+                        onClick={ this._handleFilterClick.bind(this) } 
+                        title="filter"
+                    >
                         <svg viewBox="0 0 24 24">
                             <path d="M3,2H21V2H21V4H20.92L14,10.92V22.91L10,18.91V10.91L3.09,4H3V2Z" />
                         </svg>
@@ -263,7 +278,7 @@ class Hub extends Component {
                         </div>
                     </div>
                 </div>
-                <FilterModal />
+                { this._renderFilterModal() }
             </section>
         );
     }

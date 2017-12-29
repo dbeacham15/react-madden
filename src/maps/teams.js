@@ -5,7 +5,9 @@ export default {
         primaryColor: '#97233f',
         secondaryColor: '#101820',
         conference: 'NFC',
-        division: 'West'
+        division: 'West',
+        mascot: 'Cardinals',
+        id: 6
     },
     "13": {
         name: "Atlanta Falcons",
@@ -13,7 +15,9 @@ export default {
         primaryColor: '#a6192e',
         secondaryColor: '#101820',
         conference: 'NFC',
-        division: 'South'
+        division: 'South',
+        mascot: 'Falcons',
+        id: 13
     },
     "24": {
         name: "Baltimore Ravens",
@@ -21,7 +25,9 @@ export default {
         primaryColor: '#241773',
         secondaryColor: '#101820',
         conference: 'AFC',
-        division: 'North'
+        division: 'North',
+        mascot: 'Ravens',
+        id: 24
     },
     "2": {
         name: "Buffalo Bills",
@@ -29,7 +35,9 @@ export default {
         primaryColor: '#00338d',
         secondaryColor: '#c8102e',
         conference: 'AFC',
-        division: 'East'
+        division: 'East',
+        mascot: 'Bills',
+        id: 2
     },
     "20": {
         name: "Carolina Panthers",
@@ -37,7 +45,9 @@ export default {
         primaryColor: '#0085ca',
         secondaryColor: '#101820',
         conference: 'NFC',
-        division: 'South'
+        division: 'South',
+        mascot: 'Panthers',
+        id: 20
     },
     "0": {
         name: "Chicago Bears",
@@ -45,7 +55,9 @@ export default {
         primaryColor: '#051c2c',
         secondaryColor: '#dc4405',
         conference: 'NFC',
-        division: 'North'
+        division: 'North',
+        mascot: 'Bears',
+        id: 0
     },
     "1": {
         name: "Cincinatti Bengals",
@@ -53,7 +65,9 @@ export default {
         primaryColor: '#fc4c02',
         secondaryColor: '#101820',
         conference: 'AFC',
-        division: 'North'
+        division: 'North',
+        mascot: 'Bengals',
+        id: 1
     },
     "4": {
         name: "Cleveland Browns",
@@ -61,7 +75,9 @@ export default {
         primaryColor: '#382f2d',
         secondaryColor: '#eb3300',
         conference: 'AFC',
-        division: 'North'
+        division: 'North',
+        mascot: 'Browns',
+        id: 4
     },
     "10": {
         name: "Dallas Cowboys",
@@ -69,7 +85,9 @@ export default {
         primaryColor: '#003594',
         secondaryColor: '#041e42',
         conference: 'NFC',
-        division: 'East'
+        division: 'East',
+        mascot: 'Cowboys',
+        id: 10
     },
     "3": {
         name: "Denver Broncos",
@@ -77,7 +95,9 @@ export default {
         primaryColor: '#fc4c02',
         secondaryColor: '#0c2340',
         conference: 'AFC',
-        division: 'West'
+        division: 'West',
+        mascot: 'Broncos',
+        id: 3
     },
     "18": {
         name: "Detroit Lions",
@@ -85,7 +105,9 @@ export default {
         primaryColor: '#0069b1',
         secondaryColor: '#a2aaad',
         conference: 'NFC',
-        division: 'North'
+        division: 'North',
+        mascot: 'Lions',
+        id: 18
     },
     "19": {
         name: "Green Bay Packers",
@@ -93,7 +115,9 @@ export default {
         primaryColor: '#175e33',
         secondaryColor: '#ffb81c',
         conference: 'NFC',
-        division: 'North'
+        division: 'North',
+        mascot: 'Packers',
+        id: 19
     },
     "31": {
         name: "Houston Texans",
@@ -101,7 +125,9 @@ export default {
         primaryColor: '#091f2c',
         secondaryColor: '#a6192e',
         conference: 'AFC',
-        division: 'South'
+        division: 'South',
+        mascot: 'Texans',
+        id: 31
     },
     "9": {
         name: "Indianapolis Colts",
@@ -109,7 +135,9 @@ export default {
         primaryColor: '#003a70',
         secondaryColor: '#ffffff',
         conference: 'AFC',
-        division: 'South'
+        division: 'South',
+        mascot: 'Colts',
+        id: 9
     },
     "16": { 
         name: "Jacksonville Jaguars",
@@ -117,7 +145,9 @@ export default {
         primaryColor: '#101820',
         secondaryColor: '#d49f12',
         conference: 'AFC',
-        division: 'South'
+        division: 'South',
+        mascot: 'Jaguars',
+        id: 16
     },
     "8": {  
         name: "Kansas City Chiefs",
@@ -125,7 +155,9 @@ export default {
         primaryColor: '#c8102e',
         secondaryColor: '#ffb81c',
         conference: 'AFC',
-        division: 'West'
+        division: 'West',
+        mascot: 'Chiefs',
+        id: 8
     },
     "7": {
         name: "Los Angeles Chargers",
@@ -133,7 +165,9 @@ export default {
         primaryColor: '#0c2340',
         secondaryColor: '#ffb81c',
         conference: 'AFC',
-        division: 'West'
+        division: 'West',
+        mascot: 'Chargers',
+        id: 7
     },
     "23": {
         name: "Los Angelas Rams",
@@ -141,7 +175,9 @@ export default {
         primaryColor: '#002244',
         secondaryColor: '#fff',
         conference: 'NFC',
-        division: 'West'
+        division: 'West',
+        mascot: 'Rams',
+        id: 23
     },
     "11": {
         name: "Miami Dolphins",
@@ -149,7 +185,9 @@ export default {
         primaryColor: '#008e97',
         secondaryColor: '#f58220',
         conference: 'AFC',
-        division: 'East'
+        division: 'East',
+        mascot: 'Dolphins',
+        id: 11
     },
     "30": { 
         name: "Minnesota Vikings",
@@ -157,7 +195,9 @@ export default {
         primaryColor: '#4f2683',
         secondaryColor: 'ffc62f',
         conference: 'NFC',
-        division: 'North'
+        division: 'North',
+        mascot: 'Vikings',
+        id: 30
     },
     "21": {
         name: "New England Patriots",
@@ -165,7 +205,9 @@ export default {
         primaryColor: '#0c2340',
         secondaryColor: '#c8102e',
         conference: 'AFC',
-        division: 'East'
+        division: 'East',
+        mascot: 'PAtriots',
+        id: 21
     },
     "26": {  
         name: "New Orleans Saints",
@@ -173,7 +215,9 @@ export default {
         primaryColor: '#d3bc8d',
         secondaryColor: '#101820',
         conference: 'NFC',
-        division: 'South'
+        division: 'South',
+        mascot: 'Saints',
+        id: 26
     },
     "15": {
         name: "New York Giants",
@@ -181,7 +225,9 @@ export default {
         primaryColor: '#001e62',
         secondaryColor: '#a6192e',
         conference: 'NFC',
-        division: 'East'
+        division: 'East',
+        mascot: 'Giants',
+        id: 15
     },
     "17": {
         name: "New York Jets",
@@ -189,7 +235,9 @@ export default {
         primaryColor: '#0c371d',
         secondaryColor: '#ffffff',
         conference: 'AFC',
-        division: 'East'
+        division: 'East',
+        mascot: 'Jets',
+        id: 17
     },
     "22": {
         name: "Oakland Raiders",
@@ -197,7 +245,9 @@ export default {
         primaryColor: '#101820',
         secondaryColor: '#a5acaf',
         conference: 'AFC',
-        division: 'West'
+        division: 'West',
+        mascot: 'Raiders',
+        id: 22
     },
     "12": { 
         name: "Philadelphia Eagles",
@@ -205,7 +255,9 @@ export default {
         primaryColor: '#064c53',
         secondaryColor: '#d3a205',
         conference: 'NFC',
-        division: 'East'
+        division: 'East',
+        mascot: 'Eagles',
+        id: 12
     },
     "28": {
         name: "Pittsburgh Steelers",
@@ -213,7 +265,9 @@ export default {
         primaryColor: '#ffb81c',
         secondaryColor: '#101820',
         conference: 'AFC',
-        division: 'North'
+        division: 'North',
+        mascot: 'Steelers',
+        id: 28
     },
     "14": {
         name: "San Francisco 49ers",
@@ -221,7 +275,9 @@ export default {
         primaryColor: '#aa0000',
         secondaryColor: '#b3995e',
         conference: 'NFC',
-        division: 'West'
+        division: 'West',
+        mascot: '49ers',
+        id: 14
     },
     "27": {
         name: "Seattle Seahawks",
@@ -229,7 +285,9 @@ export default {
         primaryColor: '#001433',
         secondaryColor: '#4dff00',
         conference: 'NFC',
-        division: 'West'
+        division: 'West',
+        mascot: 'Seahawks',
+        id: 27
     },
     "5": {
         name: "Tampa Bay Buccaneers",
@@ -237,7 +295,9 @@ export default {
         primaryColor: '#c8102e',
         secondaryColor: '#8c9093',
         conference: 'NFC',
-        division: 'South'
+        division: 'South',
+        mascot: 'Buccaneers',
+        id: 5
     },
     "29": {
         name: "Tennessee Texans",
@@ -245,7 +305,9 @@ export default {
         primaryColor: '#0c2340',
         secondaryColor: '#4b92db',
         conference: 'AFC',
-        division: 'South'
+        division: 'South',
+        mascot: 'Texans',
+        id: 29
     },
     "25": {
         name: "Washington Redskins",
@@ -253,6 +315,8 @@ export default {
         primaryColor: '#862633',
         secondaryColor: '#ffcd00',
         conference: 'NFC',
-        division: 'East'
+        division: 'East',
+        mascot: 'REdskins',
+        id: 25
     }
 }

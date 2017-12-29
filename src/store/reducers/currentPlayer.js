@@ -4,7 +4,7 @@ const initialState = {
     playerInfo: {}
 };
 
-export default function currentPlayer(state = {}, action) {
+export default function currentPlayer(state = initialState, action) {
     switch(action.type) {
         case actionTypes.GET_SINGLE_PLAYER :
             return {

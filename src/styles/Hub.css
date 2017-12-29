@@ -45,6 +45,7 @@
     border-left: solid 1px #eaeaea;
     border-top: solid 1px #eaeaea;
     box-shadow: 8px 0 6px -4px rgba(0,0,0,.2);
+    cursor: pointer;
     display: flex;
     height: 60px;
     overflow: hidden;
@@ -53,7 +54,7 @@
 }
 
 .hub-player-card:nth-child(odd) {
-    background-color: #eaeaea;
+    background-color: rgba(234,234,234,.4);
 }
 
 .hub-player-card__logo {
@@ -119,7 +120,7 @@
 }
 
 .hub-table__attributes-list:nth-child(odd) {
-    background-color: #eaeaea;
+    background-color: rgba(234,234,234,.4);
 }
 
 .hub-table__attributes-list-item {

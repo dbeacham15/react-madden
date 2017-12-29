@@ -1,0 +1,47 @@
+.filter-team {
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+}
+.filter-team__name {
+    text-transform: capitalize;
+}
+
+.filter-team__logo {
+    transition: transform 200ms linear;
+}
+
+.filter-team--active .filter-team__name,
+.filter-team--active .filter-team__logo {
+    opacity: .4;
+}
+
+.filter-team:not(.filter-team--active):hover .filter-team__logo {
+    transform: translate3d(0,-6px, 0);
+}
+
+.filter-team__add-icon {
+    align-items: center;
+    background-color: #0094dd;
+    border-radius: 50%;
+    display: none;
+    height: 32px;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    z-index: 5;
+}
+
+.filter-team__add-icon > svg {
+    fill: white;
+    width: 18px;
+}
+
+.filter-team--active .filter-team__add-icon {
+    display: inline-flex;
+}

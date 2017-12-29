@@ -1,0 +1,19 @@
+.filter-team-conference__name {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 28px;
+}
+
+.filter-team-conference__divisions {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+.filter-team-division {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.filter-team-division > * {
+    flex-basis: 25%;
+}

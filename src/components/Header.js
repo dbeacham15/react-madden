@@ -1,9 +1,6 @@
 import React from 'react';
 import '../styles/Header.css';
 import { Link } from 'react-router-dom';
-import App from '../App';
-import Hub from '../containers/Hub';
-import Compare from '../containers/Compare';
 
 export default () => {
     return (

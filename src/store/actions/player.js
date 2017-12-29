@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const RATINGS_API = 'https://www.easports.com/madden-nfl/ratings/service/data';
 
-export const _getPlayerInformation = info => {
+const _getPlayerInformation = info => {
     return {
         type: actionTypes.GET_SINGLE_PLAYER,
         payload: info

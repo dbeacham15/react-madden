@@ -96,3 +96,21 @@ const _triggerLoading = () => {
         payload: true
     };
 }
+
+const _displayFilter = val => {
+    return {
+        type: actionTypes.DISPLAY_FILTER,
+        payload: val
+    };
+};
+
+/**
+ * Shows/Hides the Filter Modal
+ * 
+ * @param {*} val 
+ */
+export const displayFilter = val => {
+    return dispatch => {
+        dispatch(_displayFilter(val));
+    }
+}

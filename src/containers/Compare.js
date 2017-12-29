@@ -11,15 +11,4 @@ class Compare extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        currentPlayers: state.currentPlayers
-    };
-};
-const mapDispatchToProps = dispatch => {
-    return {
-        //retrievePlayers: () => dispatch()
-    }
-}
-
 export default connect()(Compare);
