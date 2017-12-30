@@ -8,6 +8,8 @@ import '../styles/Hub.css';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
+import Pagination from './Pagination';
+import LoadingIndicator from '../components/LoadingIndicator';
 import SearchInput from './SearchInput';
 import FilterModal from './FilterModal';
 
@@ -35,8 +37,11 @@ class Hub extends Component {
         this.props.getPlayers();
     }
 
+    /**
+     * Sets up the Scrolling Steps
+     */
     componentDidMount() {
-        const attrTable = document.querySelector('.hub-table__attributes');
+       /* const attrTable = document.querySelector('.hub-table__attributes');
         const stepsVisible = Math.floor(attrTable.getBoundingClientRect().width / this.state.scrolling.stepWidth);
         const total = this.props.hub.attrOrder.length;
         const steps = total - stepsVisible; 
@@ -48,7 +53,7 @@ class Hub extends Component {
 
         this.setState({
             scrolling
-        });
+        });*/
     }
 
     getRatingOrderForPlayer(player) {
@@ -213,6 +218,54 @@ class Hub extends Component {
         }
     }
 
+    _renderPlayerTable() {
+        if (this.props.hub.loading) {
+            return (<LoadingIndicator />)
+        }
+
+        return (
+            <div className="hub-table">
+                <div className="hub-table__players">
+                    <ul className="hub-table__attributes-list hub-table__attributes-list--header">
+                        <li className="hub-table__attributes-list-item">Player</li>
+                    </ul>
+                    { this._renderPlayerCards() }
+                </div>
+                <div className="hub-table__attributes">
+                    <div 
+                        className="hub-table__attributes-scroll" 
+                        style={{ transform: `translateX(-${this.state.scrolling.current * this.state.scrolling.stepWidth}px)` }}
+                    >
+                        <ul className="hub-table__attributes-list hub-table__attributes-list--header">
+                            { this._renderAttributesHeader() }
+                        </ul>
+                        { this.props.hub.players.map(player => {
+                            return (
+                                <ul key={ player.id } className="hub-table__attributes-list">
+                                    {this._renderPlayerAttributes(player)}
+                                </ul>
+                            )
+                        })}
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    _renderPagination() {
+        if (this.props.hub.playerCount > this.props.pagination.numberRows) {
+            return (
+                <div className="hub-pagination">
+                     <Pagination 
+                        rows={ this.props.pagination.numberRows }
+                        current={ this.props.pagination.currentPage }
+                        count={ this.props.hub.playerCount }
+                     />
+                </div>
+            );
+        }
+    }
+
     render() {
         let clsName = 'hub rail';
 
@@ -233,51 +286,10 @@ class Hub extends Component {
                         </svg>
                     </div>
                     <SearchInput />
-                    <div className="hub-navigation">
-                        <div 
-                            className="hub-navigation__arrow hub-navigation__arrow--left"
-                            onClick={ this._slideHubLeft.bind(this) }
-                        >
-                            <svg viewBox="0 0 24 24">
-                                <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-                            </svg>
-                        </div>
-                        <div 
-                            className="hub-navigation__arrow hub-navigation__arrow--right"
-                            onClick={ this._slideHubRight.bind(this) }
-                        >
-                            <svg viewBox="0 0 24 24">
-                                <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                            </svg>
-                        </div>
-                    </div>
+                    { this._renderPagination() }
                 </div>
 
-                <div className="hub-table">
-                    <div className="hub-table__players">
-                        <ul className="hub-table__attributes-list hub-table__attributes-list--header">
-                            <li className="hub-table__attributes-list-item">Player</li>
-                        </ul>
-                        { this._renderPlayerCards() }
-                    </div>
-                    <div className="hub-table__attributes">
-                        <div 
-                            className="hub-table__attributes-scroll" 
-                            style={{ transform: `translateX(-${this.state.scrolling.current * this.state.scrolling.stepWidth}px)` }}
-                        >
-                            <ul className="hub-table__attributes-list hub-table__attributes-list--header">
-                                { this._renderAttributesHeader() }
-                            </ul>
-                            { this.props.hub.players.map(player => {
-                                return (
-                                    <ul key={ player.id } className="hub-table__attributes-list">
-                                        {this._renderPlayerAttributes(player)}
-                                    </ul>
-                                )
-                            })}
-                        </div>
-                    </div>
-                </div>
+                { this._renderPlayerTable() }
                 { this._renderFilterModal() }
             </section>
         );
@@ -286,7 +298,8 @@ class Hub extends Component {
 
 const mapStateToProps = state => {
     return {
-        hub: state.hub
+        hub: state.hub,
+        pagination: state.pagination
     };
 };
 

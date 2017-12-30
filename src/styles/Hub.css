@@ -1,3 +1,7 @@
+.hub {
+    margin-bottom: 64px;
+}
+
 .hub--loading .hub-players {
     opacity: .25;
 } 
@@ -55,6 +59,10 @@
 
 .hub-player-card:nth-child(odd) {
     background-color: rgba(234,234,234,.4);
+}
+
+.hub-player-card:last-child {
+    border-bottom: solid 1px #eaeaea;
 }
 
 .hub-player-card__logo {
@@ -123,6 +131,10 @@
     background-color: rgba(234,234,234,.4);
 }
 
+.hub-table__attributes-list:last-child {
+    border-bottom: solid 1px #eaeaea;
+}
+
 .hub-table__attributes-list-item {
     display: inline-flex;
     flex-shrink: 0;
@@ -175,4 +187,8 @@
 .hub-table__attributes-scroll {
     transition: transform 100ms linear;
     width: 500%;
+}
+
+.hub-pagination {
+    margin-left: auto;
 }
