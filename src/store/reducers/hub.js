@@ -6,6 +6,7 @@ const initialState = {
     currentSortOrder: 'DESC',
     entityType: 'madden18_player',
     userFilter: '',
+    isSearch: false,
     iteration: '15',
     loading: true,
     playerCount: 0,
@@ -42,6 +43,11 @@ const initialState = {
 
 export default function hub(state = initialState, action) {
     switch(action.type) {
+        case actionTypes.UPDATE_IS_SEARCH :
+            return {
+                ...state,
+                isSearch: action.payload
+            };
         case actionTypes.SET_ITERATION :
             return {
                 ...state,

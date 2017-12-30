@@ -83,6 +83,12 @@ export const updateSortKey = key => {
     }
 }
 
+const _updateIsSearch = val => {
+    return {
+        type: actionTypes.UPDATE_IS_SEARCH,
+        payload: val
+    };
+}
 /**
  *  Action Creator for Searching Player Hub
  * 
@@ -95,6 +101,9 @@ export const searchPlayers = searchValue => {
        
         if (searchValue) {
             filter = ` AND ((firstName: ${searchValue}* OR lastName: ${searchValue}*))`;
+            dispatch(_updateIsSearch(true));
+        } else {
+            dispatch(_updateIsSearch(false));
         }
         
         dispatch(_setUserFilter(filter));

@@ -63,7 +63,7 @@
 }
 
 .filter-modal__category::after {
-    background-color: #161616;
+    background-color: #0094d9;
     content: '';
     height: 3px;
     left: 0;

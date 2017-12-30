@@ -51,11 +51,25 @@ class SearchInput extends Component {
     }
 
     _clearSearchInput() {
-        this.props.searchPlayers(false);
-        
+        if (this.props.isSearch) {
+            this.props.searchPlayers(false);
+        }
         this.setState({
             value: ''
         });
+    }
+
+    _renderClearButton() {
+        if (this.state.value) {
+            return (
+                <svg 
+                    className="search-input__clear"  
+                    onClick={ this._clearSearchInput.bind(this) }
+                    viewBox="0 0 24 24">
+                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+                </svg>
+            );
+        }
     }
 
     render() {
@@ -77,12 +91,7 @@ class SearchInput extends Component {
                         placeholder="search players"
                         value={ this.state.value } 
                         onChange={ this._handleValueChange.bind(this) }/>
-                    <svg 
-                        className="search-input__clear"  
-                        onClick={ this._clearSearchInput.bind(this) }
-                        viewBox="0 0 24 24">
-                        <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
-                    </svg>
+                    { this._renderClearButton() }
                 </div>
                 <a className="search-input__submit" onClick={ this._handleSubmit.bind(this) }>
                     <svg viewBox="0 0 24 24">
@@ -96,7 +105,8 @@ class SearchInput extends Component {
 
 const mapStateToProps = state => {
     return {
-        loading: state.hub.loading
+        loading: state.hub.loading,
+        isSearch: state.hub.isSearch
     };
 }
 
