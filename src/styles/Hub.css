@@ -143,6 +143,10 @@
     width: 55px;
 }
 
+.hub-table__players .hub-table__attributes-list-item {
+    width: 100%;
+}
+
 .hub-table__attributes-list-item--positive {
     color: #56a545;
 }

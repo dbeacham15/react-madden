@@ -62,13 +62,18 @@
     text-transform: uppercase;
 }
 
-.filter-modal__category--active::after {
+.filter-modal__category::after {
     background-color: #161616;
     content: '';
     height: 3px;
     left: 0;
     position: absolute;
     top: 100%;
+    transition: width 200ms ease-in;
+    width: 0;
+}
+
+.filter-modal__category--active::after {
     width: 100%;
 }
 

@@ -119,7 +119,7 @@ class Pagination extends Component {
                         <path d="M14,7L9,12L14,17V7Z" />
                     </svg>
                     <div className="pagination-pages__display">
-                        Page { this.props.current } of { this.state.numberPages.length }
+                        page <span>{ this.props.current }</span> of <span>{ this.state.numberPages.length }</span>
                         { this._renderPageSelect() }
                     </div>
                     <svg
@@ -131,12 +131,11 @@ class Pagination extends Component {
                     </svg>
                 </div>
                 <div className="pagination-row-select">
-                    { this.props.rows }
-                    <div className="pagination-row-select__chevron">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                        </svg>
-                    </div>
+                    <label>rows:</label>
+                    <span>{ this.props.rows }</span>
+                    <svg viewBox="0 0 24 24" className="pagination-row-select__chevron">
+                        <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                    </svg>
                     { this._renderRowSelect() }
                 </div>
             </div>

@@ -4,26 +4,25 @@
 
 .pagination-row-select {
     align-items: center;
-    border: solid 1px #eaeaea;
-    color: #a3a3a3;
+    color: #161616;
     display: inline-flex;
+    font-size: 14px;
+    font-weight: bold;
     height: 40px;
     justify-content: center;
     position: relative;
-    width: 60px;
+}
+
+.pagination-row-select > label {
+    color: #a3a3a3;
+    display: block;
+    font-weight: normal;
+    margin-right: 8px;
 }
 
 .pagination-row-select__chevron {
-    height: 16px;
-    position: absolute;
-    right: 4px;
-    top: 50%;
-    transform: translateY(-50%);
+    fill: #161616;
     width: 16px;
-}
-.pagination-row-select > svg {
-    fill: #a3a3a3;
-    width: 100%;
 }
 
 .pagination-pages__display > select,
@@ -39,6 +38,7 @@
 .pagination-pages {
     margin-right: 16px;
 }
+
 .pagination-pages__display,
 .pagination-pages {
     align-items: center;
@@ -54,6 +54,13 @@
     margin-right: 8px; 
     position: relative;
     transition: color 200ms;
+}
+
+.pagination-pages__display > span {
+    color: #161616;
+    display: inline-block;
+    font-weight: bold;
+    margin: 0 4px;
 }
 
 .pagination-pages__display:hover {
