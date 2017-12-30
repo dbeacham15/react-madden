@@ -266,6 +266,13 @@ class Hub extends Component {
         }
     }
 
+    _scrollToTop(evt) {
+        evt.preventDefault();
+        const table = document.querySelector('.hub');
+        const offset = table.offsetTop - 60;
+        window.scrollTo(0, offset);
+    }
+
     render() {
         let clsName = 'hub rail';
 
@@ -290,6 +297,12 @@ class Hub extends Component {
                 </div>
 
                 { this._renderPlayerTable() }
+                <a className="hub-to-top"  onClick={ this._scrollToTop.bind(this) }>
+                    Back to Top
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7,15L12,10L17,15H7Z" />
+                    </svg>
+                </a>
                 { this._renderFilterModal() }
             </section>
         );

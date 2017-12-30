@@ -196,3 +196,23 @@
 .hub-pagination {
     margin-left: auto;
 }
+
+.hub-to-top {
+    align-items: center;
+    color: #0094D9;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+.hub-to-top > svg {
+    fill: #0094D9;
+    margin-left: 8px;
+    transition: transform 200ms;
+    width: 20px;
+}
+
+.hub-to-top:hover > svg {
+    transform: scale(1.5);
+}
