@@ -105,15 +105,38 @@
 
 .cta {
     align-items: center;
-    border: solid 2px #000;
     display: inline-flex;
-    line-height: 60px;
-    padding: 0 30px;
+    justify-content: center;
+    padding: 12px 24px;
+    position: relative;
+    min-width: 136px;
 }
 
+.cta::before {
+    border: solid 2px #a3a3a3;
+    border-radius: 3px;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: bottom 0.1s, left 0.1s, right 0.1s, top 0.1s;
+    z-index: -1;
+}
+
+.cta:hover::before {
+    bottom: -3px;
+    left: -3px;
+    right: -3px;
+    top: -3px;
+}
+
+.cta--primary::before,
 .cta--primary {
     background-color: #0094D9;
     border: none;
+    border-radius: 3px;
 }
 
 .filter-modal__options {
