@@ -4,6 +4,7 @@ const initialState = {
     activeFilter: false,
     currentSortKey: 'ovr',
     currentSortOrder: 'DESC',
+    displayAttributeModal: false,
     entityType: 'madden18_player',
     userFilter: '',
     isSearch: false,
@@ -23,7 +24,6 @@ const initialState = {
         'cit',
         'cth',
         'elu',
-        'fmv',
         'pow',
         'ibl',
         'jkm',
@@ -96,6 +96,11 @@ export default function hub(state = initialState, action) {
                 ...state,
                 loading: action.payload
             };
+        case actionTypes.DISPLAY_ATTRIBUTE_MODAL :
+            return {
+                ...state,
+                displayAttributeModal: action.payload
+            }
     default :
         return state;
     }

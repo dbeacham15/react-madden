@@ -35,10 +35,6 @@ export default {
         label: 'Elusiveness',
         ratingKey: 'elusiveness'
     },
-    fmv: {
-        label: 'Finesse Moves',
-        ratingKey: 'finesse'
-    },
     pow: {
         label: 'Hit Power',
         ratingKey: 'hitPower'

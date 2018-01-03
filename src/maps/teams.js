@@ -1,6 +1,6 @@
 export default {
     "6": {  
-        name: "Arizona Cardinals",
+        name: "Arizona",
         abbreviation: "ARZ",
         primaryColor: '#97233f',
         secondaryColor: '#101820',
@@ -10,7 +10,7 @@ export default {
         id: 6
     },
     "13": {
-        name: "Atlanta Falcons",
+        name: "Atlanta",
         abbreviation: "ATL",
         primaryColor: '#a6192e',
         secondaryColor: '#101820',
@@ -20,7 +20,7 @@ export default {
         id: 13
     },
     "24": {
-        name: "Baltimore Ravens",
+        name: "Baltimore",
         abbreviation: "BAL",
         primaryColor: '#241773',
         secondaryColor: '#101820',
@@ -30,7 +30,7 @@ export default {
         id: 24
     },
     "2": {
-        name: "Buffalo Bills",
+        name: "Buffalo",
         abbreviation: "BUF",
         primaryColor: '#00338d',
         secondaryColor: '#c8102e',
@@ -40,7 +40,7 @@ export default {
         id: 2
     },
     "20": {
-        name: "Carolina Panthers",
+        name: "Carolina",
         abbreviation: "CAR",
         primaryColor: '#0085ca',
         secondaryColor: '#101820',
@@ -50,7 +50,7 @@ export default {
         id: 20
     },
     "0": {
-        name: "Chicago Bears",
+        name: "Chicago",
         abbreviation: "CHI",
         primaryColor: '#051c2c',
         secondaryColor: '#dc4405',
@@ -60,7 +60,7 @@ export default {
         id: 0
     },
     "1": {
-        name: "Cincinatti Bengals",
+        name: "Cincinatti",
         abbreviation: "CIN",
         primaryColor: '#fc4c02',
         secondaryColor: '#101820',
@@ -70,7 +70,7 @@ export default {
         id: 1
     },
     "4": {
-        name: "Cleveland Browns",
+        name: "Cleveland",
         abbreviation: "CLE",
         primaryColor: '#382f2d',
         secondaryColor: '#eb3300',
@@ -80,7 +80,7 @@ export default {
         id: 4
     },
     "10": {
-        name: "Dallas Cowboys",
+        name: "Dallas",
         abbreviation: "DAL",
         primaryColor: '#003594',
         secondaryColor: '#041e42',
@@ -90,7 +90,7 @@ export default {
         id: 10
     },
     "3": {
-        name: "Denver Broncos",
+        name: "Denver",
         abbreviation: "DEN",
         primaryColor: '#fc4c02',
         secondaryColor: '#0c2340',
@@ -100,7 +100,7 @@ export default {
         id: 3
     },
     "18": {
-        name: "Detroit Lions",
+        name: "Detroit",
         abbreviation: "DET",
         primaryColor: '#0069b1',
         secondaryColor: '#a2aaad',
@@ -110,7 +110,7 @@ export default {
         id: 18
     },
     "19": {
-        name: "Green Bay Packers",
+        name: "Green Bay",
         abbreviation: "GRN",
         primaryColor: '#175e33',
         secondaryColor: '#ffb81c',
@@ -120,7 +120,7 @@ export default {
         id: 19
     },
     "31": {
-        name: "Houston Texans",
+        name: "Houston",
         abbreviation: "HOU",
         primaryColor: '#091f2c',
         secondaryColor: '#a6192e',
@@ -130,7 +130,7 @@ export default {
         id: 31
     },
     "9": {
-        name: "Indianapolis Colts",
+        name: "Indianapolis",
         abbreviation: "IND",
         primaryColor: '#003a70',
         secondaryColor: '#ffffff',
@@ -140,7 +140,7 @@ export default {
         id: 9
     },
     "16": { 
-        name: "Jacksonville Jaguars",
+        name: "Jacksonville",
         abbreviation: "JAX",
         primaryColor: '#101820',
         secondaryColor: '#d49f12',
@@ -150,7 +150,7 @@ export default {
         id: 16
     },
     "8": {  
-        name: "Kansas City Chiefs",
+        name: "Kansas City",
         abbreviation: "KAN",
         primaryColor: '#c8102e',
         secondaryColor: '#ffb81c',
@@ -160,7 +160,7 @@ export default {
         id: 8
     },
     "7": {
-        name: "Los Angeles Chargers",
+        name: "Los Angeles",
         abbreviation: "LAC",
         primaryColor: '#0c2340',
         secondaryColor: '#ffb81c',
@@ -170,7 +170,7 @@ export default {
         id: 7
     },
     "23": {
-        name: "Los Angelas Rams",
+        name: "Los Angelas",
         abbreviation: "LAR",
         primaryColor: '#002244',
         secondaryColor: '#fff',
@@ -180,7 +180,7 @@ export default {
         id: 23
     },
     "11": {
-        name: "Miami Dolphins",
+        name: "Miami",
         abbreviation: "Mia",
         primaryColor: '#008e97',
         secondaryColor: '#f58220',
@@ -190,7 +190,7 @@ export default {
         id: 11
     },
     "30": { 
-        name: "Minnesota Vikings",
+        name: "Minnesota",
         abbreviation: "MIN",
         primaryColor: '#4f2683',
         secondaryColor: 'ffc62f',
@@ -200,17 +200,17 @@ export default {
         id: 30
     },
     "21": {
-        name: "New England Patriots",
+        name: "New England",
         abbreviation: "NWE",
         primaryColor: '#0c2340',
         secondaryColor: '#c8102e',
         conference: 'AFC',
         division: 'East',
-        mascot: 'PAtriots',
+        mascot: 'Patriots',
         id: 21
     },
     "26": {  
-        name: "New Orleans Saints",
+        name: "New Orleans",
         abbreviation: "NOR",
         primaryColor: '#d3bc8d',
         secondaryColor: '#101820',
@@ -220,7 +220,7 @@ export default {
         id: 26
     },
     "15": {
-        name: "New York Giants",
+        name: "New York",
         abbreviation: "NYG",
         primaryColor: '#001e62',
         secondaryColor: '#a6192e',
@@ -230,7 +230,7 @@ export default {
         id: 15
     },
     "17": {
-        name: "New York Jets",
+        name: "New York",
         abbreviation: "NYJ",
         primaryColor: '#0c371d',
         secondaryColor: '#ffffff',
@@ -240,7 +240,7 @@ export default {
         id: 17
     },
     "22": {
-        name: "Oakland Raiders",
+        name: "Oakland",
         abbreviation: "OAK",
         primaryColor: '#101820',
         secondaryColor: '#a5acaf',
@@ -250,7 +250,7 @@ export default {
         id: 22
     },
     "12": { 
-        name: "Philadelphia Eagles",
+        name: "Philadelphia",
         abbreviation: "PHI",
         primaryColor: '#064c53',
         secondaryColor: '#d3a205',
@@ -260,7 +260,7 @@ export default {
         id: 12
     },
     "28": {
-        name: "Pittsburgh Steelers",
+        name: "Pittsburgh",
         abbreviation: "Pit",
         primaryColor: '#ffb81c',
         secondaryColor: '#101820',
@@ -270,7 +270,7 @@ export default {
         id: 28
     },
     "14": {
-        name: "San Francisco 49ers",
+        name: "San Francisco",
         abbreviation: "SFO",
         primaryColor: '#aa0000',
         secondaryColor: '#b3995e',
@@ -280,7 +280,7 @@ export default {
         id: 14
     },
     "27": {
-        name: "Seattle Seahawks",
+        name: "Seattle",
         abbreviation: "SEA",
         primaryColor: '#001433',
         secondaryColor: '#4dff00',
@@ -290,7 +290,7 @@ export default {
         id: 27
     },
     "5": {
-        name: "Tampa Bay Buccaneers",
+        name: "Tampa Bay",
         abbreviation: "TAM",
         primaryColor: '#c8102e',
         secondaryColor: '#8c9093',
@@ -300,7 +300,7 @@ export default {
         id: 5
     },
     "29": {
-        name: "Tennessee Texans",
+        name: "Tennessee",
         abbreviation: "TEN",
         primaryColor: '#0c2340',
         secondaryColor: '#4b92db',
@@ -310,7 +310,7 @@ export default {
         id: 29
     },
     "25": {
-        name: "Washington Redskins",
+        name: "Washington",
         abbreviation: "WAS",
         primaryColor: '#862633',
         secondaryColor: '#ffcd00',

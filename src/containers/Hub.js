@@ -7,11 +7,13 @@ import attributes from '../maps/attributes';
 import '../styles/Hub.css';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 import Pagination from './Pagination';
 import LoadingIndicator from '../components/LoadingIndicator';
 import SearchInput from './SearchInput';
 import FilterModal from './FilterModal';
+import Header from '../components/Header';
+import AttributeModal from '../components/AttributeModal';
 
 class Hub extends Component {
     static propTypes = {
@@ -116,9 +118,9 @@ class Hub extends Component {
     }
 
     _renderPlayerCards() {
-        return this.props.hub.players.map(player => {
+        return this.props.hub.players.map(player => {console.log(player);
             return (
-                <div className="hub-player-card" key={`hub-player-${player.id}`}>
+                <Link to={ `/player/${player.primaryKey}`} className="hub-player-card" key={`hub-player-${player.id}`}>
                     <div className="hub-player-card__logo">
                         <img 
                             alt=""
@@ -138,13 +140,18 @@ class Hub extends Component {
                             <span>{ player.position }</span>
                         </h6>
                     </div>
-                </div>
+                </Link>
             );
         });
     }
 
+    _handleAttributeListItemClick(evt) {
+        this.props.displayAttributeModal(true);
+    }
+
     _renderPlayerAttributes(player) {
         return this.props.hub.attrOrder.map(attr => {
+        
             const ratingK = `${attributes[attr].ratingKey}_rating`;
             const diffKey = `${attributes[attr].ratingKey}_diff`;
             const diff = parseInt(player[diffKey], 10);
@@ -160,6 +167,7 @@ class Hub extends Component {
                 <li
                     className={ clsName }
                     key={`${player.id}-${attr}`}
+                    onClick={ this._handleAttributeListItemClick.bind(this) }
                 >{ player[ratingK] }</li>
             )
         });
@@ -218,13 +226,28 @@ class Hub extends Component {
         }
     }
 
-    _renderPlayerTable() {
-        if (this.props.hub.loading) {
-            return (<LoadingIndicator />)
+    _renderLoadingIndicator() {
+        if (!this.props.hub.loading) {
+            return; 
         }
-
         return (
-            <div className="hub-table">
+            <div className="hub-table__loading-indicator">
+                <LoadingIndicator />
+            </div>
+        )
+    }
+
+    _renderPlayerTable() {
+        const baseClsName = 'hub-table';
+        let clsName = baseClsName;
+
+        if (this.props.hub.loading) {
+            clsName = `${clsName} ${baseClsName}--loading`;
+
+        }
+        return (
+            <div className={ clsName }>
+                { this._renderLoadingIndicator() }
                 <div className="hub-table__players">
                     <ul className="hub-table__attributes-list hub-table__attributes-list--header">
                         <li className="hub-table__attributes-list-item">Player</li>
@@ -270,7 +293,12 @@ class Hub extends Component {
         evt.preventDefault();
         const table = document.querySelector('.hub');
         const offset = table.offsetTop - 60;
-        window.scrollTo(0, offset);
+
+        window.scroll({
+            behavior: 'smooth',
+            left: 0,
+            top: offset,
+        });
     }
 
     render() {
@@ -281,30 +309,33 @@ class Hub extends Component {
         }
 
         return  (
-            <section className={ clsName }>
-                <div className="hub-filtering">
-                    <div 
-                        className="hub-filter"
-                        onClick={ this._handleFilterClick.bind(this) } 
-                        title="filter"
-                    >
-                        <svg viewBox="0 0 24 24">
-                            <path d="M3,2H21V2H21V4H20.92L14,10.92V22.91L10,18.91V10.91L3.09,4H3V2Z" />
-                        </svg>
+            <div>
+                <Header />
+                <section className={ clsName }>
+                    <div className="hub-filtering">
+                        <div 
+                            className="hub-filter"
+                            onClick={ this._handleFilterClick.bind(this) } 
+                            title="filter"
+                        >
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3,2H21V2H21V4H20.92L14,10.92V22.91L10,18.91V10.91L3.09,4H3V2Z" />
+                            </svg>
+                        </div>
+                        <SearchInput />
+                        { this._renderPagination() }
                     </div>
-                    <SearchInput />
-                    { this._renderPagination() }
-                </div>
 
-                { this._renderPlayerTable() }
-                <a className="hub-to-top"  onClick={ this._scrollToTop.bind(this) }>
-                    Back to Top
-                    <svg viewBox="0 0 24 24">
-                        <path d="M7,15L12,10L17,15H7Z" />
-                    </svg>
-                </a>
-                { this._renderFilterModal() }
-            </section>
+                    { this._renderPlayerTable() }
+                    <a className="hub-to-top"  onClick={ this._scrollToTop.bind(this) }>
+                        Back to Top
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7,15L12,10L17,15H7Z" />
+                        </svg>
+                    </a>
+                    { this._renderFilterModal() }
+                </section>
+            </div>
         );
     }
 }

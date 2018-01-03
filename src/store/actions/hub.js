@@ -168,3 +168,17 @@ const _setUserFilter = filter => {
         payload: filter
     };
 }
+
+/** Display Attribute Modal  */
+const _displayAttributeModal = isDisplayed => {
+    return {
+        type: actionTypes.DISPLAY_ATTRIBUTE_MODAL,
+        payload: isDisplayed
+    };
+}
+
+export const displayAttributeModal = isDisplayed => {
+    return dispatch => {
+        dispatch(_displayAttributeModal(isDisplayed));
+    };
+}

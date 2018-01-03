@@ -1,4 +1,8 @@
 .player-header {
+    align-items: flex-end;
+    background: linear-gradient(45deg, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%);
+    border-bottom: solid 1px #a3a3a3;
+    color: #161616;
     display: flex;
     height: 275px;
     overflow: hidden;
@@ -8,42 +12,82 @@
 }
 
 .player-header__content {
-    color: white;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    margin-left: auto;
-    padding-bottom: 25px;
-    text-transform: uppercase;
-}
-
-.player-header__assets {
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-bottom: 32px;
     position: relative;
-    width: 350px;
-}
-
-.player-header__portrait,
-.player-header__logo {
-    position: absolute;
-}
-
-.player-header__portrait {
-    bottom: 0;
+    text-transform: uppercase;
     width: 100%;
 }
 
-.player-header__logo {
-    left: 20px;
-    top: -100px;
+.player-header__portrait {
+    margin-right: 48px;
+    position: relative;
+    width: 400px;
+}
+
+.player-header__portrait > img {
+    display: block;
+    width: 100%;
+}
+
+.player-header__ovr {
+    align-items: center;
+    background-color: #0094dd;
+    border-radius: 50%;
+    bottom: 25px;
+    color: #ffffff;
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 22px;
+    font-weight: bold;
+    height: 70px;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    width: 70px;
+    z-index: 10;
+}
+
+.player-header__ovr > label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.player-header__team-logo {
+    left: 50%;
+    opacity: .3;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
 }
 
 .player-header__name {
     font-size: 32px;
-    letter-spacing: -1px;
-    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
-.player-header__name > span {
-    color: #eaeaea;
-    font-size: 42px;
+.player-header__demographics {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+}
+
+.player-header__demographics > li {
+    margin-right: 8px;
+}
+
+.player-header__demographics > li::after {
+    content: '|';
+    margin-left: 8px;
+}
+
+.player-header__demographics > li:last-child::after {
+    content: '';
 }
