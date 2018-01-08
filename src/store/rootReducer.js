@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import hub from './reducers/hub';
-import currentPlayer from './reducers/currentPlayer';
+import player from './reducers/player';
 import filter from './reducers/filter';
 import pagination from './reducers/pagination';
 
 export default combineReducers({
     hub,
-    currentPlayer,
+    player,
     filter,
     pagination
 });

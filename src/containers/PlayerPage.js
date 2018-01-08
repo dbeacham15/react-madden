@@ -168,6 +168,12 @@ class PlayerPage extends Component {
                         />
                     </div>
                 </div>
+                <div className="">
+                    <div className="player-related-profiles">
+                    
+                    </div>
+                    <div className="player-usage-stats"></div>
+                </div>
             </section>
         )
     }
@@ -175,7 +181,7 @@ class PlayerPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        player: state.currentPlayer.playerInfo
+        player: state.player.playerInfo
     }
 }
 

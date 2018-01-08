@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as hubActions from '../store/actions/hub';
+import { getPlayerInformation } from '../store/actions/player';
 import HubPlayer from './HubPlayer';
 import attributes from '../maps/attributes';
 import '../styles/Hub.css';
@@ -118,7 +119,7 @@ class Hub extends Component {
     }
 
     _renderPlayerCards() {
-        return this.props.hub.players.map(player => {console.log(player);
+        return this.props.hub.players.map(player => {
             return (
                 <Link to={ `/player/${player.primaryKey}`} className="hub-player-card" key={`hub-player-${player.id}`}>
                     <div className="hub-player-card__logo">
@@ -146,6 +147,9 @@ class Hub extends Component {
     }
 
     _handleAttributeListItemClick(evt) {
+        const { player, attribute } = evt.currentTarget.dataset;
+
+        this.props.getPlayerInformation(player, true, attribute);
         this.props.displayAttributeModal(true);
     }
 
@@ -167,6 +171,8 @@ class Hub extends Component {
                 <li
                     className={ clsName }
                     key={`${player.id}-${attr}`}
+                    data-player={ player.primaryKey}
+                    data-attribute={ attr }
                     onClick={ this._handleAttributeListItemClick.bind(this) }
                 >{ player[ratingK] }</li>
             )
@@ -301,6 +307,16 @@ class Hub extends Component {
         });
     }
 
+    _renderAttributeModal() {
+        if (this.props.hub.displayAttributeModal) {
+            return (
+                <AttributeModal
+                    label={ 'Acceleration' }
+                />
+            )
+        }
+    }
+
     render() {
         let clsName = 'hub rail';
 
@@ -334,6 +350,7 @@ class Hub extends Component {
                         </svg>
                     </a>
                     { this._renderFilterModal() }
+                    { this._renderAttributeModal() }
                 </section>
             </div>
         );
@@ -348,7 +365,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators( { ...hubActions }, dispatch);
+    return bindActionCreators( { ...hubActions, getPlayerInformation }, dispatch);
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Hub));

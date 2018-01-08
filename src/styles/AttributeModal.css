@@ -1,0 +1,32 @@
+.attribute-modal {
+    background-color: rgba(244,244,244,0.9);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.attribute-modal__content {
+    background-color: #Fff;
+    left: 50%;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 725px;
+}
+
+.attribute-modal__content-header {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 16px;
+    text-transform: uppercase;
+}
+
+.attribute-modal__chart {
+    margin-top: 24px;
+}
